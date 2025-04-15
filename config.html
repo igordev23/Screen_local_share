@@ -2,23 +2,15 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Configuração</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      text-align: center;
-      padding-top: 100px;
-      background: #f4f4f4;
-    }
-    img {
-      width: 100px;
-      margin-bottom: 20px;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <img src="https://cdn-icons-png.flaticon.com/512/3524/3524636.png" alt="Ícone de Configuração" />
-  <h1>Aplicativo iniciado!</h1>
-  <p>Feche esta janela para encerrar o aplicativo.</p>
+<body class="bg-gray-100 flex items-center justify-center h-screen text-center">
+  <div class="bg-white p-8 rounded-2xl shadow-lg max-w-sm w-full">
+    <img src="https://cdn-icons-png.flaticon.com/512/3524/3524636.png" alt="Ícone de Configuração" class="w-20 mx-auto mb-4" />
+    <h1 class="text-2xl font-semibold text-gray-800 mb-2">Aplicativo iniciado!</h1>
+    <p class="text-gray-600">Feche esta janela para encerrar o aplicativo.</p>
+  </div>
 </body>
 </html>
