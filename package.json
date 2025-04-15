@@ -1,0 +1,109 @@
+{
+    "name": "share-your-screen",
+    "version": "0.1.0",
+    "description": "A real-time screen sharing application allowing users to easily share their screen with others with a simple code.",
+    "private": true,
+    "license": "MIT",
+    "author": "Hin",
+    "main": "main.js",
+    "scripts": {
+        "dev": "next dev --turbopack",
+        "build": "next build",
+        "start": "next start",
+        "electron": "electron .",
+        "dist": "electron-builder",
+        "postbuild": "xcopy .next\\static .next\\standalone\\.next\\static /E /I /Y && xcopy public .next\\standalone\\public /E /I /Y",
+        "postinstall": "npm run build",
+        "lint": "next lint",
+        "format": "prettier --write .",
+        "format:check": "prettier --check .",
+        "lint-staged": "lint-staged",
+        "prepare": "husky"
+    },
+    "dependencies": {
+        "@radix-ui/react-slot": "^1.1.0",
+        "@radix-ui/react-toast": "^1.2.2",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "lucide-react": "^0.462.0",
+        "next": "15.0.3",
+        "open": "^10.1.0",
+        "peerjs": "^1.5.2",
+        "react": "19.0.0-rc-66855b96-20241106",
+        "react-dom": "19.0.0-rc-66855b96-20241106",
+        "tailwind-merge": "^2.5.2",
+        "tailwindcss-animate": "^1.0.7",
+        "wait-on": "^8.0.3"
+    },
+    "devDependencies": {
+        "@types/node": "20.6.2",
+        "@types/react": "npm:types-react@19.0.0-rc.1",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
+        "autoprefixer": "10.4.15",
+        "electron": "^35.1.5",
+        "electron-builder": "^24.13.3",
+        "eslint": "^9.15.0",
+        "eslint-config-next": "15.0.3",
+        "eslint-config-prettier": "^9.1.0",
+        "eslint-plugin-prettier": "^5.2.1",
+        "husky": "^9.1.7",
+        "lint-staged": "^15.2.10",
+        "postcss": "8.4.30",
+        "prettier": "^3.4.1",
+        "tailwindcss": "^3.4.15",
+        "typescript": "5.2.2"
+    },
+    "overrides": {
+        "@types/react": "npm:types-react@19.0.0-rc.1",
+        "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1"
+    },
+    "build": {
+        "appId": "com.example.myapp",
+        "productName": "Share_Local_Screen",
+        "files": [
+            "main.js",
+            "preload.js",
+            "next.config.ts",
+            "package.json",
+            "public/**/*",
+            "config.html",
+            ".next/standalone/**/*",
+            "node_modules/**/*",
+            "**/*"
+        ], "extraResources": [
+            {
+              "from": "node.exe",
+              "to": "node.exe"
+            }
+          ],
+          "asarUnpack": [
+            "**/*.js",
+            ".next/standalone"
+            ],
+            "extraFiles": [
+                {
+                  "from": ".next/standalone",
+                  "to": "next-server"
+                }
+              ],
+        "win": {
+            "target": "nsis",
+            "icon": "icon.ico"
+        },
+        "mac": {
+            "target": [
+                "dmg",
+                "zip"
+            ],
+            "icon": "icon.icns"
+        },
+        "linux": {
+            "target": [
+                "AppImage",
+                "deb"
+            ],
+            "icon": "icon.png",
+            "category": "Utility"
+        }
+    }
+}
