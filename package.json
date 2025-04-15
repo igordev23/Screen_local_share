@@ -4,7 +4,7 @@
     "description": "A real-time screen sharing application allowing users to easily share their screen with others with a simple code.",
     "private": true,
     "license": "MIT",
-    "author": "Hin",
+    "author": "Igor",
     "main": "main.js",
     "scripts": {
         "dev": "next dev --turbopack",
