@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <footer className="py-8 px-4 text-center text-sm text-gray-600">
             Desenvolvido por{" "}
             <Link
-              href="https://tonghohin.vercel.app"
+              href="https://personal-info-p9hz.onrender.com/"
               className="underline hover:text-[#8DC63F]"
               target="_blank"
             >
