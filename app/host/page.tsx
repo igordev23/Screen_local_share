@@ -25,25 +25,34 @@ export default function HostPage() {
   const { toast } = useToast();
   const router = useRouter();
 
+
+  function generateShortId(length = 6) {
+    const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
+    let id = '';
+    for (let i = 0; i < length; i++) {
+      id += chars[Math.floor(Math.random() * chars.length)];
+    }
+    return id;
+  }
+  
+
   useEffect(() => {
     try {
-      const newPeer = new Peer({ debug: 2 });
+      const shortId = generateShortId(6);
+      const newPeer = new Peer(shortId, { debug: 2 });
       setPeer(newPeer);
-
-      newPeer.on("open", (id) => {
-        setRoomId(id);
-      });
-
+      setRoomId(shortId);
+  
       newPeer.on("connection", (connection) => {
         setConnections((prev) => [...prev, connection.peer]);
-
+  
         connection.on("close", () => {
           setConnections((prev) =>
             prev.filter((peerId) => peerId !== connection.peer)
           );
         });
       });
-
+  
       return () => {
         newPeer.destroy();
       };
@@ -51,7 +60,7 @@ export default function HostPage() {
       console.error("Erro ao inicializar o peer:", error);
     }
   }, []);
-
+  
   useEffect(() => {
     if (!peer) return;
 

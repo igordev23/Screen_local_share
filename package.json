@@ -1,7 +1,7 @@
 {
-    "name": "share-your-screen",
+    "name": "lanvizion",
     "version": "0.1.0",
-    "description": "A real-time screen sharing application allowing users to easily share their screen with others with a simple code.",
+    "description": "A real-time screen sharing application allowing users to easily share their screen with others in your local network using a simple code.",
     "private": true,
     "license": "MIT",
     "author": "Igor",
@@ -59,7 +59,7 @@
     },
     "build": {
         "appId": "com.example.myapp",
-        "productName": "Share_Local_Screen",
+        "productName": "LanVizion",
         "files": [
             "main.js",
             "preload.js",

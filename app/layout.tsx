@@ -9,7 +9,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Screen Share - Compartilhe sua tela instantaneamente",
+  title: "LanVizion - Compartilhe sua tela instantaneamente",
   description: "Compartilhe sua tela instantaneamente com qualquer pessoa usando um simples código de sala. Sem downloads ou cadastros.",
   keywords: "compartilhamento de tela, webrtc, compartilhar tela online, navegador, gratuito"
 } satisfies Metadata;
