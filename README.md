@@ -2,7 +2,7 @@
 
 # Local Screen Sharing Application
 
-A real-time screen sharing application built with Next.js, WebRTC, PeerJS and Electron. Create or join rooms to share your screen with others instantly.
+A real-time screen sharing application built with Next.js, WebRTC, PeerJS and Electron. Create or join rooms to share your screen with others instantly **on the same local network**.
 
 ## ✨ Features
 
@@ -13,8 +13,9 @@ A real-time screen sharing application built with Next.js, WebRTC, PeerJS and El
 
 ## 📱 Device Support
 
-- **Hosting**: Desktop/laptop browsers locally only
-- **Viewing**: Works on all devices (desktop, tablet, mobile)
+- **Hosting**: Desktop/laptop browsers **on the same local network only**
+- **Viewing**: Works on all devices (desktop, tablet, mobile) connected to the same network
+
 
 ## 🌐 Browser Support
 
