@@ -1,9 +1,10 @@
 
 
 # Local Screen Sharing Application
+A real-time screen sharing application built with Next.js, WebRTC, PeerJS, and Electron. Create or join rooms to share your screen instantly on the same local network, without relying entirely on an internet connection.
 
-A real-time screen sharing application built with Next.js, WebRTC, PeerJS and Electron. Create or join rooms to share your screen with others instantly **on the same local network**.
-
+## Motivation
+Currently, all computers in the university labs share the same Ethernet network. This can result in slow or unstable connections when relying on the internet for screen sharing. This project was developed to offer a fast and reliable local solution for sharing screens directly over the local network. It is especially useful for students who have difficulty seeing the content presented by the professor on their computer, particularly during programming demonstrations. The application aims to enhance accessibility and improve the learning experience in the classroom.
 ## ✨ Features
 
 - Real-time screen and audio sharing
