@@ -12,7 +12,7 @@
         "start": "next start",
         "electron": "electron .",
         "dist": "electron-builder",
-        "postbuild": "xcopy .next\\static .next\\standalone\\.next\\static /E /I /Y && xcopy public .next\\standalone\\public /E /I /Y",
+        "postbuild": "shx cp -r .next/static .next/standalone/.next/static && shx cp -r public .next/standalone/public",
         "postinstall": "npm run build",
         "lint": "next lint",
         "format": "prettier --write .",
