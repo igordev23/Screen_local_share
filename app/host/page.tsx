@@ -95,14 +95,11 @@ export default function HostPage() {
         )
       });
     } else if (activeStream) {
-      connections.forEach((connection) => {
-        const call = peer.call(connection, activeStream);
-
-        activeStream.getTracks()[0].onended = () => {
-          call.close();
-          activeStream.getTracks().forEach((track) => track.stop());
-        };
+      connections.forEach((connectionId) => {
+        const call = peer.call(connectionId, activeStream); // Usa o mesmo stream
       });
+      
+      
     }
   }, [peer, toast, activeStream, connections]);
 
