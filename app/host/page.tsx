@@ -24,6 +24,7 @@ export default function HostPage() {
   const [connections, setConnections] = useState<string[]>([]);
   const { toast } = useToast();
   const router = useRouter();
+  const [calledPeers, setCalledPeers] = useState<string[]>([]);
 
 
   function generateShortId(length = 6) {
@@ -96,8 +97,12 @@ export default function HostPage() {
       });
     } else if (activeStream) {
       connections.forEach((connectionId) => {
-        const call = peer.call(connectionId, activeStream); // Usa o mesmo stream
+        if (!calledPeers.includes(connectionId)) {
+          const call = peer.call(connectionId, activeStream);
+          setCalledPeers((prev) => [...prev, connectionId]);
+        }
       });
+      
       
       
     }
